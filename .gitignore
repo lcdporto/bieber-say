@@ -1,0 +1,9 @@
+# os temp files
+*~
+.DS_STORE
+
+# editors and ides
+\#*\#
+.idea
+
+# @todo match https://github.com/github/gitignore/blob/master/Composer.gitignore
