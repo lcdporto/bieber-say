@@ -1,9 +1,15 @@
-# os temp files
+# linux and mac temporary files
 *~
-.DS_STORE
+.DS_Store
 
-# editors and ides
-\#*\#
-.idea
+# emacs temporary files
+\#*#\
 
-# @todo match https://github.com/github/gitignore/blob/master/Composer.gitignore
+# netbeans ide et al
+/nbproject/*
+/.idea/*
+
+# Vendor folder
+
+/vendor/*
+
