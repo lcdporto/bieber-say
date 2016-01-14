@@ -12,4 +12,5 @@
 # Vendor folder
 
 /vendor/*
+!/vendor/empty
 
