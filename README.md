@@ -2,6 +2,8 @@
 
 A simple web api to control LCD's public address system. A small component in a very elaborate and intricate master plan.
 
+This API generate json responses following JSend specifications. More information at: http://labs.omniti.com/labs/jsend
+
 
 ## Installing Instructions ##
 

@@ -2,25 +2,36 @@
 
 // web/index.php
 require_once __DIR__.'/vendor/autoload.php';
+require_once __DIR__ . '/response.php';
+
 
 $app = new Silex\Application();
 
+$app->response = new Response();
+
+$app->error(function (\Exception $e, $code) {
+    return $app->response->error($code, $e->getMessage());
+});
+
+$app->input = json_decode(file_get_contents('php://input'), true);
 
 
-header('Content-Type: application/json');
 $app->get('/', function () use ($app) {
-    return json_encode(['test' => 'a']);
+    return $app->response->success(200, 'API online and running fine');
 });
 
 $app->post('/', function() use ($app){
+    if(!isset($app->input['message'])){
+        return $app->response->fail(400, [
+            'message' => 'Argument is missing'
+        ]);
+    }
 
-    $data = json_decode(file_get_contents('php://input'), true);
+    $output = shell_exec('say "' . $app->input['message'] . '"');
 
-    $output = shell_exec('say "' . $data['message'] . '"');
-
-    return json_encode([
-        'message' => $output
-    ]);
+    return $app->response->success(200, $output);
 });
+
+
 
 $app->run();
