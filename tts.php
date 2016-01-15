@@ -4,7 +4,7 @@ interface tts{
     function say($message);
 }
 
-class Say implements tts{
+class GNUStep implements tts{
     function say($message){
         return shell_exec('say "' . $message . '"');
     }

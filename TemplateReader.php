@@ -3,7 +3,7 @@ class TemplateReader{
 
     private static $instance;
     private $baseMessage = '';
-    private $templatesDir = __DIR__ . '/templates/';
+    private $templatesDir = 'templates/';
 
     public static function getInstance(){
         if (null === static::$instance) {
