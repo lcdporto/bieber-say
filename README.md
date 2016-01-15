@@ -52,6 +52,7 @@ GET localhost:8080/templates
 
 #### Run a template:
 GET localhost:8080/templates/{templateName}?var=value
+
 You can replace placeholders by sending it's name and the value to be replaced as query strings
 
 #### Create a template:
