@@ -14,3 +14,7 @@
 /vendor/*
 !/vendor/empty
 
+
+/templates/*
+!/templates/empty
+

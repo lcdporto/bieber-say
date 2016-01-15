@@ -7,10 +7,6 @@ class Response{
     const SUCCESS = 'success';
 
 
-    function __construct(){
-
-    }
-
     function _setHeaders($statusCode){
         http_response_code($statusCode);
         header('Content-Type: application/json');
