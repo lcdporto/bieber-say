@@ -11,11 +11,13 @@ $app->post('/', function (Request $request, Response $response) {
 
     $msg = trim(str_replace($output['trigger_word'], '', $output['text']));
 
+    $consoleOutput = shell_exec('say "' . $msg . '"');
+
     $response->getBody()->write(json_encode([
         'status' => 'success',
-        'message' => $msg
+        'message' => $msg,
+        'console' => $consoleOutput
     ]));
-    shell_exec('say "' . $msg . '"');
     return $response;
 });
 $app->run();
