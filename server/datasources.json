@@ -1,0 +1,17 @@
+{
+  "db": {
+    "password": "farofa10",
+    "name": "db",
+    "connector": "memory",
+    "user": "ighor.martins@gmail.com"
+  },
+  "mysqllocal": {
+    "host": "localhost",
+    "url": "",
+    "database": "biebersay",
+    "password": "root",
+    "name": "mysqllocal",
+    "connector": "mysql",
+    "user": "root"
+  }
+}
