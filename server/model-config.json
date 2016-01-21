@@ -37,5 +37,11 @@
     "public": true,
     "$promise": {},
     "$resolved": true
+  },
+  "Bieber": {
+    "dataSource": null,
+    "public": true,
+    "$promise": {},
+    "$resolved": true
   }
 }

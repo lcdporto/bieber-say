@@ -3,18 +3,10 @@ module.exports = function(Template) {
     var exec = require('child_process').exec;
 
     Template.say = function(templateId, cb) {
+        var bieber = Template.app.models.Bieber;
+
         Template.findById(templateId, function (err, instance) {
-            var template = instance;
-            var cmd = 'say "' + Template.resolveText(template) + '"';
-
-            exec(cmd, function(error, stdout, stderr) {
-                stdout = (stdout || 'ok');
-
-                template.cmd = cmd;
-                template.result = stdout;
-                cb(null, template);
-            });
-
+            bieber.say(Template.resolveText(instance), cb);
         });
     };
 
